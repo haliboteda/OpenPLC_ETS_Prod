@@ -55,4 +55,6 @@ OpenKNXproducer-x64.exe knxprod -o OpenPLC_TP.knxprod OpenPLC_TP.xml
 ```
 
 Keep the last four digits of every ID in the source as `0000`; signing replaces them
-with a hash. Commit the source and the regenerated `.knxprod` together.
+with a hash. Inside an ID, write the order number with every character other than a
+letter or digit as `.` plus its hex code (`OPENPLC-TP` becomes `OPENPLC.2DTP`), or ETS
+imports the product but cannot list it. Commit the source and the regenerated `.knxprod` together.
