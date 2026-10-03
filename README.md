@@ -25,9 +25,11 @@ interface or gateway on the network.
 3. **Add the device** from the catalog to a TP line in your project. ETS lists it
    under the manufacturer *KNX Association* (the shared test manufacturer ID
    `M-00FA`); search for `OpenPLC TP` or the order number `OPENPLC-TP`.
-4. **Individual address.** Put the board in programming mode and let ETS program the
-   address. How the board enters programming mode is not settled yet. The KNX
-   programming button is the board's BOOT0 button, and the board has no programming LED.
+4. **Individual address.** While the sketch runs, press the BOOT0 button once: the
+   system LED stays on and the USB serial port prints `KNX: programming mode on`.
+   Let ETS program the address; ETS or a second press ends programming mode.
+   **Do not hold the button while powering up or resetting the board**: that enters
+   the bootloader's upload mode, and holding it 10 s restores factory state.
 5. **Download** the application from ETS.
 6. **Group addresses.** Link a group address to each object:
 
