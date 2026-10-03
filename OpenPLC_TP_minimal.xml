@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KNX xmlns="http://knx.org/xml/project/20" CreatedBy="OpenKNXproducer" ToolVersion="4.3.12">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <Catalog>
+        <CatalogSection Id="M-00FA_CS-1" Name="OpenPLC" Number="1" DefaultLanguage="en-US">
+          <CatalogItem Id="M-00FA_H-0001-0_HP-0001-00-0000_CI-OPENPLC-TP-1" Name="OpenPLC TP minimal" Number="1" ProductRefId="M-00FA_H-0001-0_P-OPENPLC-TP" Hardware2ProgramRefId="M-00FA_H-0001-0_HP-0001-00-0000" DefaultLanguage="en-US" />
+        </CatalogSection>
+      </Catalog>
+      <ApplicationPrograms>
+        <ApplicationProgram Id="M-00FA_A-0001-00-0000" ApplicationNumber="1" ApplicationVersion="0" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="OpenPLC TP minimal" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="en-US" DynamicTableManagement="false" Linkable="false" MinEtsVersion="5.0">
+          <Static>
+            <Code>
+              <RelativeSegment Id="M-00FA_A-0001-00-0000_RS-04-00000" Name="Parameters" Offset="0" Size="1" LoadStateMachine="4" />
+            </Code>
+            <ComObjectTable>
+              <ComObject Id="M-00FA_A-0001-00-0000_O-1" Name="Switch" Text="Switch" Number="1" FunctionText="Input" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="M-00FA_A-0001-00-0000_O-2" Name="Status" Text="Status" Number="2" FunctionText="Output" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+            </ComObjectTable>
+            <ComObjectRefs>
+              <ComObjectRef Id="M-00FA_A-0001-00-0000_O-1_R-1" RefId="M-00FA_A-0001-00-0000_O-1" />
+              <ComObjectRef Id="M-00FA_A-0001-00-0000_O-2_R-2" RefId="M-00FA_A-0001-00-0000_O-2" />
+            </ComObjectRefs>
+            <AddressTable MaxEntries="65000" />
+            <AssociationTable MaxEntries="65000" />
+            <LoadProcedures>
+              <LoadProcedure MergeId="2">
+                <LdCtrlRelSegment AppliesTo="full" LsmIdx="4" Size="1" Mode="0" Fill="0" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="4">
+                <LdCtrlWriteRelMem ObjIdx="4" Offset="0" Size="1" Verify="true" />
+              </LoadProcedure>
+            </LoadProcedures>
+            <Options />
+          </Static>
+          <Dynamic>
+            <ChannelIndependentBlock>
+              <ParameterBlock Id="M-00FA_A-0001-00-0000_PB-1" Name="General" Text="General">
+                <ComObjectRefRef RefId="M-00FA_A-0001-00-0000_O-1_R-1" />
+                <ComObjectRefRef RefId="M-00FA_A-0001-00-0000_O-2_R-2" />
+              </ParameterBlock>
+            </ChannelIndependentBlock>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+      <Hardware>
+        <Hardware Id="M-00FA_H-0001-0" Name="OpenPLC" SerialNumber="0001" VersionNumber="0" BusCurrent="10" HasIndividualAddress="true" HasApplicationProgram="true">
+          <Products>
+            <Product Id="M-00FA_H-0001-0_P-OPENPLC-TP" Text="OpenPLC TP minimal" OrderNumber="OPENPLC-TP" IsRailMounted="true" DefaultLanguage="en-US" />
+          </Products>
+          <Hardware2Programs>
+            <Hardware2Program Id="M-00FA_H-0001-0_HP-0001-00-0000" MediumTypes="MT-0">
+              <ApplicationProgramRef RefId="M-00FA_A-0001-00-0000" />
+            </Hardware2Program>
+          </Hardware2Programs>
+        </Hardware>
+      </Hardware>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>
